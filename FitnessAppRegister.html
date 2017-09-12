@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">  
+        <style>
+
+            body {
+                background-image: url(Images/2-blue-gradient.jpg);
+            }
+            
+            .wrapper {	
+                margin-top: 80px;
+              margin-bottom: 80px;
+            }
+            
+            .form-register {
+              max-width: 380px;
+              padding: 15px 35px 45px;
+              margin: 0 auto;
+              background-color: #F7A831;
+              border: 1px solid rgba(0,0,0,0.1);  
+            
+            }
+            .form-register-heading,       
+                .form-control {
+                  position: relative;
+                  font-size: 16px;
+                  height: auto;
+                  padding: 10px;
+                }
+            
+                input[type="text"] {
+                    margin-bottom: -1px;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            
+                input[type="password"] {
+                    margin-bottom: 20px;
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }           
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">FitnessApp2017</a>
+            <a href="#" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">Register</a>
+            <a href="#" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">Sign In</a>
+    
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F7A831;">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                      
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>    
+        </header>
+        
+        <div class="wrapper">
+            <form class="form-register">       
+                <h2 class="form-register-heading" >Registration</h2>
+                Username Desired <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+                Email <input type="text" class="form-control" name="email" placeholder="Email Address" required="" autofocus="" />
+                Password <input type="password" class="form-control" name="password" placeholder="Password" required=""/> 
+                Confirm Password<input type="password" class="form-control" name="password" placeholder="Confirm Password" required=""/>      
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>   
+            </form>
+        </div>
+        
+    </body>
+</html>

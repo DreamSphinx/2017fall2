@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html>
-    <head>  
+    <head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">  
         <style>
+
             body {
                 background-image: url(Images/2-blue-gradient.jpg);
             }
+            
         </style>
     </head>
 
     <body>
         <header>
-            <div class = "container">
-                <h2>FitnessApp 2017</h2>
-            </div>
+            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">FitnessApp2017</a>
+            <a href="#" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">Register</a>
+            <a href="#" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">Sign In</a>
+
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F7A831;">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                  
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+
         </header>
 
-        <h3>Dropdown Menu inside a Navigation Bar</h3>
-        <p>Hover over the "Dropdown" link to see the dropdown menu.</p>
-
+        <div class = "container">
+            <div class = "jumbotron" style="background-color: #F7A831; border-radius:0 !important;">
+                <h3>Welcome to your Fitness Tracker App!</h3>
+                <p>This app will help you take care of everything you need to know to help keep yourself in tip-top shape! Please use either the tabs above, or the links below to explore!</p>
+            </div>
+    
+            <div class = "row">
+                <div class = "col-md-4">
+                    <div class="card" style="background-color: #F7A831;">
+                        <img class="card-img-top" src="Images/fitnessinput.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">Input Today's Exercises!</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Take me there</a>
+                        </div>
+                    </div>              
+                </div>
+    
+                <div class = "col-md-4">
+                    <div class="card" style="background-color: #F7A831;">
+                        <img class="card-img-top" src="Images/fitnessgraph.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">View Your Progress!</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Take me there</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class = "col-md-4">
+                    <div class="card" style="background-color: #F7A831;">
+                        <img class="card-img-top" src="Images/fitnesstip.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">Get Helpful Tips!</h4>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Take me there</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy;2017 Eric Whaley, All Rights Reserved.</p>
+        </footer>
     </body>
 </html>
