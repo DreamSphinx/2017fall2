@@ -1,7 +1,7 @@
 const express = require("express");
 const server = express();
 
-server.use("/client", express.static("./jquery-mockup"))
+server.use("/client", express.static("./"));
 
 server.listen(3000);
 

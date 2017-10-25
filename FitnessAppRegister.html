@@ -45,12 +45,6 @@
 
     <body>
         <div id="header-placeholder"></div>
-        <script src="jquery.js"></script>
-        <script> 
-            $(document).ready(function() {  
-                $("#header-placeholder").load("_header.html")     
-            });
-        </script>
         
         <div class="wrapper">
             <form class="form-register">       
@@ -65,5 +59,13 @@
         <footer>
             <font color = "white">&copy;2017 Eric Whaley, All Rights Reserved.</font>
         </footer> 
+        <script>
+            var navProperties = {
+                mainNav: "_nav.html",
+                currentSection: "home"
+            };
+        </script>
+        <script src="javascript-files\bundle.js" >
+        </script>
     </body>
 </html>

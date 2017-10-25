@@ -36,12 +36,6 @@
 
     <body>
         <div id="header-placeholder"></div>
-        <script src="jquery.js"></script>
-        <script> 
-            $(document).ready(function() {  
-                $("#header-placeholder").load("_header.html")     
-            });
-        </script>
 
         <div class = "container">
             <div class = "jumbotron" style="background-color: #F7A831; border-radius:0 !important;">
@@ -63,5 +57,13 @@
         <footer>
             <font color = "white">&copy;2017 Eric Whaley, All Rights Reserved.</font>
         </footer> 
+        <script>
+            var navProperties = {
+                mainNav: "_nav.html",
+                currentSection: "home"
+            };
+        </script>
+        <script src="javascript-files\bundle.js" >
+        </script>
     </body>
 </html>
