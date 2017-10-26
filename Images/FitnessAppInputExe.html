@@ -9,12 +9,12 @@
             }
             
         </style>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
 
     <body>
         <div id="header-placeholder"></div>
-      
+        <script src="javascript-files\jquery.js"></script>
+        <script src = "javascript-files\exerciseinput.js"></script>       
         
         <div class = "container">
 
@@ -35,10 +35,6 @@
                                 <div class="form-group">
                                     <input id="situps" type="number" class="form-control">                   
                                 </div>
-                                <p class="card-text">What time?</p>
-                                <div class="form-group">
-                                    <input id="time1" type="text" class="form-control">                   
-                                </div>
                                 <button type="button" class="button1" id = "b1">Add to list</button>
 
                             </div>
@@ -50,11 +46,17 @@
                               <div class="form-group">
                                 <input id="pushups" type="number" class="form-control">                   
                               </div>
-                              <p class="card-text">What time?</p>
-                              <div class="form-group">
-                                  <input id="time2" type="text" class="form-control">                   
-                              </div>
                               <button type="button" class="button1" id = "b2">Add to list</button>
+                              <script>
+                                var myArray = Array();
+                                $("#b2").click(function(){
+                                    if(document.getElementById("pushups").value != "") {
+                                        myArray.push("Push-ups: " + document.getElementById("pushups").value + "<br>");
+                                        $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
+                                        pushups.value = "";
+                                    }
+                                }); 
+                              </script>
                             </div>
                         </div>
 
@@ -65,25 +67,37 @@
                               <div class="form-group">
                                 <input id="runningtime" type="number" class="form-control">                   
                               </div>
-                              <p class="card-text">What time?</p>
-                              <div class="form-group">
-                                  <input id="time3" type="text" class="form-control">                   
-                              </div>
                               <button type="button" class="button1" id = "b3">Add to list</button>
+                              <script>
+                                var myArray = Array();
+                                $("#b3").click(function(){
+                                    if(document.getElementById("runningtime").value != "") {
+                                        myArray.push("Running Time: " + document.getElementById("runningtime").value + " minutes <br>");
+                                        $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
+                                        runningtime.value = "";
+                                    }
+                                }); 
+                              </script>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Lunges</h4>
-                                <p class="card-text">How many?</p>
-                                <div class="form-group">
-                                    <input id="lunges" type="number" class="form-control">                   
-                                </div>
-                                <p class="card-text">What time?</p>
-                                <div class="form-group">
-                                    <input id="time4" type="text" class="form-control">                   
-                                </div>
-                                <button type="button" class="button1" id = "b4">Add to list</button>
+                            <h4 class="card-title">Lunges</h4>
+                            <p class="card-text">How many?</p>
+                            <div class="form-group">
+                                <input id="lunges" type="number" class="form-control">                   
+                            </div>
+                            <button type="button" class="button1" id = "b4">Add to list</button>
+                            <script>
+                                var myArray = Array();
+                                $("#b4").click(function(){
+                                    if(document.getElementById("lunges").value != "") {
+                                        myArray.push("Lunges: " + document.getElementById("lunges").value  + "<br>");
+                                        $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
+                                        lunges.value = "";
+                                    }
+                                }); 
+                              </script>
                             </div>
                         </div>
                         <div class="card">
@@ -97,11 +111,18 @@
                                 <div class="form-group">
                                     <input id="benchpressesweight" type="number" class="form-control">                   
                                 </div>
-                                <p class="card-text">What time?</p>
-                                <div class="form-group">
-                                    <input id="time5" type="text" class="form-control">                   
-                                </div>
                                 <button type="button" class="button1" id = "b5">Add to list</button>
+                                <script>
+                                    var myArray = Array();
+                                    $("#b5").click(function(){
+                                        if(document.getElementById("benchpressesweight").value != "" && document.getElementById("benchpressesnum").value != "") {
+                                            myArray.push("Bench Presses: " + document.getElementById("benchpressesnum").value + " at " + document.getElementById("benchpressesweight").value + " lbs <br>");
+                                            $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
+                                            benchpressesweight.value = "";
+                                            benchpressesnum.value = "";
+                                        }
+                                    }); 
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -128,7 +149,7 @@
                 currentSection: "home"
             };
         </script>
-        <script src="javascript-files\bundle.js" ></script>
-        <script src = "javascript-files\exerciseinput.js"></script> 
+        <script src="javascript-files\bundle.js" >
+        </script>
     </body>
 </html>
