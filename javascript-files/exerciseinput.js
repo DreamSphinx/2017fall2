@@ -1,7 +1,7 @@
 var myArray = Array();
 $(document).ready(function() {
     $("#b1").click(function(){
-        if(document.getElementById("situps").value != "")
+        if(document.getElementById("situps").value != "" && document.getElementById("time1").value != "")
         {
             myArray.push("Sit-ups: " + document.getElementById("situps").value + " at " + document.getElementById("time1").value + "<br>");
             $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
@@ -10,7 +10,7 @@ $(document).ready(function() {
         }
     });
     $("#b2").click(function(){
-        if(document.getElementById("pushups").value != "") {
+        if(document.getElementById("pushups").value != "" && document.getElementById("time2").value != "") {
             myArray.push("Push-ups: " + document.getElementById("pushups").value  + " at " + document.getElementById("time2").value + "<br>");
             $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
             pushups.value = "";
@@ -18,7 +18,7 @@ $(document).ready(function() {
         }
     }); 
     $("#b3").click(function(){
-        if(document.getElementById("runningtime").value != "") {
+        if(document.getElementById("runningtime").value != "" && document.getElementById("time3").value != "") {
             myArray.push("Running Time: " + document.getElementById("runningtime").value + " minutes at "  + document.getElementById("time3").value + "<br>");
             $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
             runningtime.value = "";
@@ -26,7 +26,7 @@ $(document).ready(function() {
         }
     }); 
     $("#b4").click(function(){
-        if(document.getElementById("lunges").value != "") {
+        if(document.getElementById("lunges").value != "" && document.getElementById("time4").value != "") {
             myArray.push("Lunges: " + document.getElementById("lunges").value + " at " + document.getElementById("time4").value  + "<br>");
             $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
             lunges.value = "";
@@ -34,7 +34,7 @@ $(document).ready(function() {
         }
     });
     $("#b5").click(function(){
-        if(document.getElementById("benchpressesweight").value != "" && document.getElementById("benchpressesnum").value != "") {
+        if(document.getElementById("benchpressesweight").value != "" && document.getElementById("benchpressesnum").value != "" && document.getElementById("time5").value != "") {
             myArray.push("Bench Presses: " + document.getElementById("benchpressesnum").value + " at " + document.getElementById("benchpressesweight").value + " lbs at " + document.getElementById("time5").value + "<br>");
             $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
             benchpressesweight.value = "";
