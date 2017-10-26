@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-=======
-<script src = "exerciseinput.js"></script>
-const $ = require("jquery");
-
-
->>>>>>> master
 var myArray = Array();
 $(document).ready(function() {
     $("#b1").click(function(){
         if(document.getElementById("situps").value != "")
         {
-<<<<<<< HEAD
             myArray.push("Sit-ups: " + document.getElementById("situps").value + " at " + document.getElementById("time1").value + "<br>");
             $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
             situps.value = "";
@@ -50,11 +42,4 @@ $(document).ready(function() {
             time5.value = "";
         }
     }); 
-=======
-            myArray.push("Sit-ups: " + document.getElementById("situps").value + "<br>");
-            $("#card1").append('<span>' + myArray[myArray.length - 1] + '</span>');
-            situps.value = "";
-        }
-    });
->>>>>>> master
 });
