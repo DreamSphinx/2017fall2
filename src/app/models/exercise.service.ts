@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 
 declare var window: any;
 declare var FB: any;
-export var loggedIn: boolean;
 
 
 @Injectable()
@@ -13,6 +12,7 @@ export class ExerciseService {
 
   apiRoot: string;   
   me: Player; 
+  loggedIn: boolean;
 
   constructor(private http: Http, private router: Router) {
       this.apiRoot = `//${window.location.hostname}:8081` 
@@ -58,11 +58,11 @@ export class ExerciseService {
           data => {
               this.me = data.json();
               this.router.navigate(['/home']);
-              return true;
+              this.loggedIn = true;
           },
           err => {
               console.log(err);
-              return false;
+              this.loggedIn = false;
           },
           () => {}
       )

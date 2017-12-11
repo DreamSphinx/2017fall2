@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import {loggedIn} from "../models/exercise.service"
+import { ExerciseService } from "../models/exercise.service"
 
 @Component({
   selector: 'app-header',
@@ -10,9 +10,14 @@ import {loggedIn} from "../models/exercise.service"
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  loggedIn: boolean;
+  constructor(private exerciseservice: ExerciseService) { 
+    this.loggedIn = exerciseservice.loggedIn;
+    console.log(exerciseservice.loggedIn);
+  }
 
   ngOnInit() {
+    
   }
   
 }
