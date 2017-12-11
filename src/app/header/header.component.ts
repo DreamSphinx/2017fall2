@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+import {loggedIn} from "../models/exercise.service"
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,5 +14,5 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }
