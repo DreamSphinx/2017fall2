@@ -1,14 +1,13 @@
-import * as $ from 'jquery';
-
 export class List {
     myArray: String[] = [];
 }
 
-export class Player {
+export class User {
     id: number;
-    name: string = "Eric Whaley";   
+    name: string;   
 }
 
 export class Session {
-    players: Player[] = [new Player(), new Player()];
+    users: User[] = [new User(), new User()];
+    progress: string
 }

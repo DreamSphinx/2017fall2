@@ -1,9 +1,7 @@
 <header>
   <a routerLink = "/home" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">FitnessApp2017</a>
-  <a routerLink = "/register" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true" ng-hide = "loggedIn">Register</a>
-  <a routerLink = "/login" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true" ng-hide = "loggedIn">Sign In</a>
-  <a class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true" ng-show = "loggedIn">Sign Out</a>
-
-  
+  <a routerLink = "/login" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true" [hidden] = "exerciseservice.me != null">Sign In</a>
+  <a routerLink = "/home" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true" (click) = "this.logout()" [hidden] = "exerciseservice.me == null">Sign Out</a>
+ 
   <app-nav></app-nav>
 </header>

@@ -17,7 +17,6 @@ server.use(function(req, res, next) {
   console.log(`http://localhost:${port}`);
 
 server.use("/exercise", exerciseController.router );
-    
 
 //console.log(process.env);
 server.listen(port);

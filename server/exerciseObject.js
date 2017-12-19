@@ -1,6 +1,7 @@
 const exercise = {
-    room: {
-        players: [],
+    session: {
+        users: [],
+        progress: [],
     }
 }
 

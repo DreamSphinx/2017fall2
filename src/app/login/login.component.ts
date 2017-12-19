@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseService } from '../models/exercise.service';
-import { Player, Session } from '../models/exercise';
+import { User, Session } from '../models/exercise';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,12 +18,12 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
     }
-
+    
     login(){
         this.exercise.login(this.name, this.password)
     }
+
     loginFB(){
         this.exercise.loginFB();
     }
-
 }

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';  
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { HttpModule } from "@angular/http";
@@ -14,10 +15,11 @@ import { InputcalComponent } from './inputcal/inputcal.component';
 import { InputexeComponent } from './inputexe/inputexe.component';
 import { LoginComponent } from './login/login.component';
 import { ProgressComponent } from './progress/progress.component';
-import { RegisterComponent } from './register/register.component';
 import { TipsComponent } from './tips/tips.component';
 import { ExerciseService } from './models/exercise.service';
-
+import { LoggedinComponent } from './loggedin/loggedin.component';
+import { List } from './models/exercise';
+import { Session } from './models/exercise';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,11 @@ import { ExerciseService } from './models/exercise.service';
     InputexeComponent,
     LoginComponent,
     ProgressComponent,
-    RegisterComponent,
-    TipsComponent
+    TipsComponent,
+    LoggedinComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -46,11 +49,11 @@ import { ExerciseService } from './models/exercise.service';
       { path: "input/inputexe", component: InputexeComponent },
       { path: "login", component: LoginComponent },
       { path: "progress", component: ProgressComponent },
-      { path: "register", component: RegisterComponent },
-      { path: "tips", component: TipsComponent }
+      { path: "tips", component: TipsComponent },
+      { path: "loggedin", component: LoggedinComponent },
     ])
   ],
-  providers: [ ExerciseService ],
+  providers: [ ExerciseService, HeaderComponent, LoginComponent, List, Session],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { List } from '../models/exercise';
+import { Http } from '@angular/http';
+import { Router } from '@angular/router';
+import { List, Session } from '../models/exercise';
+import { ExerciseService } from '../models/exercise.service'
 declare var jquery:any;
 declare var $ :any;
 
@@ -11,12 +14,10 @@ declare var $ :any;
 })
 export class InputexeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http, private router: Router, private exerciseservice: ExerciseService, private list: List, private session: Session) { }
 
   ngOnInit() {
   }
-
-  list = new List();
   
   button1Click(){
     if((<HTMLInputElement>document.getElementById("situps")).value != "" && (<HTMLInputElement>document.getElementById("time1")).value != "")
@@ -68,5 +69,13 @@ export class InputexeComponent implements OnInit {
       (<HTMLInputElement>document.getElementById("benchpressesnum")).value = null;
       (<HTMLInputElement>document.getElementById("time5")).value = null;
     }
+  }
+
+  submitProgress(){
+    console.log(this.list.myArray.toString());
+    const progressData = this.list.myArray.toString();
+    console.log(progressData);
+    this.http.post(this.exerciseservice.apiRoot + "/exercise/session/progress",  progressData ).subscribe();
+    console.log(this.session.progress);
   }
 }

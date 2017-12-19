@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Player } from './exercise';
+import { User, } from './exercise';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
+import { json } from 'body-parser';
+
 
 declare var window: any;
 declare var FB: any;
@@ -11,8 +13,7 @@ declare var FB: any;
 export class ExerciseService {
 
   apiRoot: string;   
-  me: Player; 
-  loggedIn: boolean;
+  me: User; 
 
   constructor(private http: Http, private router: Router) {
       this.apiRoot = `//${window.location.hostname}:8081` 
@@ -40,10 +41,8 @@ export class ExerciseService {
   loginFB() {
       FB.login((response: any) => {
           if (response.authResponse) {
-           console.log(response);
 
            FB.api('/me?fields=name,email,picture', (response: any) => {
-             console.log(response);
              this.login(response.name, 'password', response.id, response.picture.data.url);
            });
 
@@ -54,20 +53,24 @@ export class ExerciseService {
   }
 
   login(name: string, password: string, fbid?: string, picture?: string){
-      this.http.post(this.apiRoot + "/exercise/session/players", { name, password, fbid, picture }).subscribe(
+      this.http.post(this.apiRoot + "/exercise/session/users", { name, password, fbid, picture }).subscribe(
           data => {
+              console.log('Success');
               this.me = data.json();
-              this.router.navigate(['/home']);
-              this.loggedIn = true;
+              console.log(this.me);
+              this.router.navigate(['loggedin']);
+              
+
           },
           err => {
               console.log(err);
-              this.loggedIn = false;
           },
           () => {}
       )
-      
   }
 
-
+  logout(){
+    this.me = null;
+    this.router.navigate(['home']);
+  }
 }
