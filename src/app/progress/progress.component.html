@@ -1,7 +1,29 @@
 <div class = "container">
   <div class = "jumbotron" style="background-color: #F7A831; border-radius:0 !important;">
-      <h1>This page will show you how many calories you burned or took in for today, or the whole week!</h1>
-      
+      <h1>This page will show you your weight and your exercises for today!</h1>   
+  </div>
+  <div class="card" style="width: 20rem;">
+    '<span *ngIf="this.exerciseservice.me != null">
+    <a class="btn btn-primary btn-lg active float-right" [hidden] = "exerciseservice.me == null" ng-bind="this.exerciseservice.me">
+      <img [src]="this.exerciseservice.me.picture" style="width: 26px;" class="rounded" />
+      {{this.exerciseservice.me.name}}
+    </a>
+  </span>
+    <div class="card-body">
+      <h4 class="card-title"id = "date"></h4>
+      <p>Weight:</p>
+      <p class = "card-text" id = "weight"></p>
+        
+      <p class="card-text">Exercises:</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let x of this.list.myArray" class="list-group-item">
+        {{x}}
+      </li>
+    </ul>
+    <div class="card-body">
+      <a routerLink = "/input/inputexe" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add more exercises</a>
+    </div>
   </div>
 </div>
 <footer>

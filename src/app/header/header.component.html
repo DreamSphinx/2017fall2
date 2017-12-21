@@ -2,6 +2,13 @@
   <a routerLink = "/home" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">FitnessApp2017</a>
   <a routerLink = "/login" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true" [hidden] = "exerciseservice.me != null">Sign In</a>
   <a routerLink = "/home" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true" (click) = "this.logout()" [hidden] = "exerciseservice.me == null">Sign Out</a>
- 
+  
+  <span *ngIf="this.exerciseservice.me != null">
+    <a class="btn btn-primary btn-lg active float-right" style = "width:15%; float:right;" [hidden] = "this.exerciseservice.me == null"  id = "userinfo">
+      <img [src]="this.exerciseservice.me.picture" [hidden] = "this.exerciseservice.me.picture == null" style="width: 26px;" class="rounded" />
+      Logged in as {{this.exerciseservice.me.name}}
+    </a>
+  </span>
+  
   <app-nav></app-nav>
 </header>

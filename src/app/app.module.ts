@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { HttpModule } from "@angular/http";
 import { HttpClientModule} from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import {NgAutoCompleteModule} from "ng-auto-complete";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -41,6 +42,7 @@ import { Session } from './models/exercise';
     FormsModule,
     HttpModule,
     HttpClientModule,
+    NgAutoCompleteModule,
     RouterModule.forRoot([
       { path: "home", component: IndexComponent },
       { path: "", pathMatch: "full", redirectTo: "/home"},

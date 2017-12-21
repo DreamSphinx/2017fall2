@@ -2,7 +2,17 @@
   
               <div class = "jumbotron" style="background-color: #F7A831; border-radius:0 !important;">
                   
-                  <div class="card w-100" style="margin-bottom:10px; margin-top: -50px;">
+                  <div class="card w-100" style="margin-bottom:50px; margin-top: -50px;">               
+                    <div class="card-body">
+                      <h4 class="card-title">Weight Input!</h4>
+                      <p class="card-text">Use this to enter your weight (in pounds).</p>
+                      <div class="form-group" style = "margin-bottom:50px; width: 25%;">
+                            <input id="weight" type="number" class="form-control">                   
+                      </div>
+                      <button type="button" class="button1" id = "b1" (click) = "button0Click()">Add to progress</button>
+                    </div>
+                  </div>
+                  <div class="card w-100" style="margin-bottom:10px; margin-top: -50px;">               
                       <div class="card-body">
                         <h4 class="card-title">Exercise Input!</h4>
                         <p class="card-text">Use this to select your exercise, and how much of it you did.</p>
@@ -87,7 +97,15 @@
                               </div>
                           </div>
                       </div>
+                      
                       <div class = "col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                              Weight for today:
+                            </div>
+                            <div class="card-body" id = "card0">                
+                            </div>
+                        </div>
                           <div class="card">
                               <div class="card-header">
                                 Exercises you've done:

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ExerciseService } from "../models/exercise.service"
-import { User } from '../models/exercise';
+import { User, Session } from '../models/exercise';
 import { LoginComponent } from '../login/login.component';
 
 
@@ -18,16 +18,19 @@ export class HeaderComponent implements OnInit {
   constructor(private exerciseservice: ExerciseService, private signin: LoginComponent) { 
   }
 
+  session = new Session();
+
   ngOnInit() {
     
     this.user = this.exerciseservice.me;
+    console.log(this.user);
     if(this.user != null){
       this.isLoggedIn = true;
       console.log("Is logged in = " + this.isLoggedIn);
     }
     else if(this.user == null){
       this.isLoggedIn = false;
-      console.log("Is logged in = " + this.isLoggedIn)
+      console.log("Is logged in = " + this.isLoggedIn);
     } 
   }
 

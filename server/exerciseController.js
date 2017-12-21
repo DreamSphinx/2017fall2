@@ -20,8 +20,8 @@ router
     })
 
     .post("/session/progress", (req, res) => {
-        let progressObject = req.body;
-        exercise.session.progress.push(progressObject);
+        let progressObject = {progress: req.body.progressData } ;
+        exercise.session.progress = progressObject;
         res.status(201).send(progressObject);
     })
 

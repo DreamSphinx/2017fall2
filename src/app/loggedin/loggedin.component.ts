@@ -17,7 +17,7 @@ export class LoggedinComponent implements OnInit {
   
   continueToHome(){
     this.router.navigate(["home"]);
-    this.header.ngOnInit();
+
   }
 
 }

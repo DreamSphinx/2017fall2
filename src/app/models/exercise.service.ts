@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { User, } from './exercise';
+import { User, List, Session } from './exercise';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { json } from 'body-parser';
+
+import 'rxjs/add/operator/map'
+
 
 
 declare var window: any;
@@ -14,6 +17,7 @@ export class ExerciseService {
 
   apiRoot: string;   
   me: User; 
+  session: Session = new Session();
 
   constructor(private http: Http, private router: Router) {
       this.apiRoot = `//${window.location.hostname}:8081` 
@@ -36,6 +40,16 @@ export class ExerciseService {
            js.src = "https://connect.facebook.net/en_US/sdk.js";
            fjs.parentNode.insertBefore(js, fjs);
          }(document, 'script', 'facebook-jssdk'));
+  }
+
+  url: string
+
+  search_word(term){
+      return this.http.get(this.apiRoot + "exercise/session/users" + term).map(res => {
+          return res.json().map(item => {
+              return item.word
+          })
+      })
   }
 
   loginFB() {
@@ -72,5 +86,22 @@ export class ExerciseService {
   logout(){
     this.me = null;
     this.router.navigate(['home']);
+  }
+
+  submitProgress(list: List){
+    console.log(list.myArray.toString());
+    let progressData = list.myArray;
+    console.log(progressData.toString());
+    this.http.post(this.apiRoot + "/exercise/session/progress",  {progressData} ).subscribe(
+        data => {
+            console.log('Success Track');
+            this.session.progress = data.json();
+            console.log(this.session.progress);
+        },
+        err => {
+            console.log(err);
+        },
+        () => {}
+    )
   }
 }

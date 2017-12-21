@@ -1,5 +1,6 @@
 export class List {
     myArray: String[] = [];
+    weight: string;
 }
 
 export class User {
@@ -9,5 +10,5 @@ export class User {
 
 export class Session {
     users: User[] = [new User(), new User()];
-    progress: string
+    progress: String[] = [];
 }
